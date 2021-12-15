@@ -1,29 +1,29 @@
-class Conta{    
+class Conta {
     agencia;
     numero;
     cliente;
     _saldo = 0.0;
 
-    get saldo(){
+    get saldo() {
         return this._saldo;
     }
 
-    sacar(valor){
-        if(this._saldo >= valor){
+    sacar(valor) {
+        if (this._saldo >= valor) {
             this._saldo = this._saldo - valor;
-        }        
+        }
     }
 
-    depositar(valor){
-        if(valor <= 0){
+    depositar(valor) {
+        if (valor <= 0) {
             return;
         }
         this._saldo = this._saldo + valor;
     }
 
-    transferir(valor, contaDestino){
+    transferir(valor, contaDestino) {
         // Implementar o código do método transferir
-        if(this._saldo <= valor || valor < 0){
+        if (this._saldo <= valor || valor < 0) {
             return;
         }
         this._saldo -= valor;
