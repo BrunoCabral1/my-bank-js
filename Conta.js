@@ -7,6 +7,11 @@ class Conta {
     get saldo() {
         return this._saldo;
     }
+    // Aula presencial do dia 22/12/2021, implemtar a conta parte de obterSaldo
+    obterSaldo(){
+
+
+    }
 
     sacar(valor) {
         if (this._saldo >= valor) {
