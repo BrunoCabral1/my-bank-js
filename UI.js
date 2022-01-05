@@ -28,8 +28,13 @@ function escolheOpcao(opcao) {
     switch (opcao) {
         case 1:
             console.log('Implementar saldo.');
-            
+            //Realizado na aula do dia 5/1/2022
+
+            numero = Number(prompt('Informe o numero da conta: '));
+            conta = bd.lerConta(numero);
+            console.log('numero da conta ' + numero + '. saldo: ' + conta._saldo);
             break;
+            
         case 2:
             console.log('Implementar saque.');
             break;
@@ -51,7 +56,7 @@ function escolheOpcao(opcao) {
             const novaConta = new Conta();
             novaConta.agencia = Number(prompt('Informe a agencia: '));
             novaConta.numero = Number(prompt('Informe o número da conta: '));;
-            novaConta._saldo = 0.0 //Adicionado na aula do dia 5 para saldo inicial na hora da criação da conta do cliente
+            novaConta._saldo = Number(prompt('Inserir saldo inicial da conta: R$:  ')) //Adicionado na aula do dia 5 para saldo inicial na hora da criação da conta do cliente
             novaConta.cliente = novoCliente;
 
             bd.cadastrarConta(novaConta);

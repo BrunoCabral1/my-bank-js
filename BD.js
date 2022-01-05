@@ -13,6 +13,7 @@ class BD{
         if(this.contas.has(numero)){
             return this.contas.get(numero);
         }
+        return null;
     }
 
     listarContas(){
