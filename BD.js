@@ -9,9 +9,9 @@ class BD{
         this.contas.set(conta.numero, conta)
     }
 
-    lerConta(conta){
-        if(this.contas.has(conta.numero)){
-            return this.contas.get(conta.numero);
+    lerConta(numero){
+        if(this.contas.has(numero)){
+            return this.contas.get(numero);
         }
     }
 
