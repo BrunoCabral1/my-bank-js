@@ -51,7 +51,7 @@ function escolheOpcao(opcao) {
             const novaConta = new Conta();
             novaConta.agencia = Number(prompt('Informe a agencia: '));
             novaConta.numero = Number(prompt('Informe o número da conta: '));;
-            novaConta._saldo = Number(prompt('Valor inicial da conta: R$  ')) //Adicionado na aula para saldo inicial na hora da criação da conta do cliente
+            novaConta._saldo = 0.0 //Adicionado na aula do dia 5 para saldo inicial na hora da criação da conta do cliente
             novaConta.cliente = novoCliente;
 
             bd.cadastrarConta(novaConta);
