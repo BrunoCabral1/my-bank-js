@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node UI"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^27.4.3"
+    "jest": "^27.4.3",
+    "prompt-sync": "^4.2.0"
   }
 }
