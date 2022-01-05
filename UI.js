@@ -15,7 +15,7 @@ function iniciar() {
 
 function exibeMenu() {
     console.log("\n\n\t Escolha a opção desejada");
-    console.log("1 - Consultar Extrato");
+    console.log("1 - Consultar Saldo");
     console.log("2 - Sacar");
     console.log("3 - Depositar");
     console.log("4 - Cadastrar Conta");
@@ -27,7 +27,7 @@ function escolheOpcao(opcao) {
 
     switch (opcao) {
         case 1:
-            console.log('Implementar extrato.');
+            console.log('Implementar saldo.');
             break;
         case 2:
             console.log('Implementar saque.');
@@ -38,11 +38,14 @@ function escolheOpcao(opcao) {
             break;
 
         case 4:
-            console.log("Cadastrar nova conta.");
+            console.log("\nCadastrar nova conta.");
 
             const novoCliente = new Cliente();
             novoCliente.nome = prompt('Informe o nome: ');
             novoCliente.cpf = prompt('Informe o CPF: ');
+            novoCliente.fone = prompt('Informar o numero de telefone: '); //Realizado na aula do dia 5
+            novoCliente.endereco = prompt('Informar endereço: '); // Realizado na aula do dia 5
+
 
             const novaConta = new Conta();
             novaConta.agencia = Number(prompt('Informe a agencia: '));
@@ -50,6 +53,7 @@ function escolheOpcao(opcao) {
             novaConta.cliente = novoCliente;
 
             bd.cadastrarConta(novaConta);
+            console.log("\nConta cadastrada com sucesso.") //Realizado na aula 05/01/2022
             break;
 
         case 5:
