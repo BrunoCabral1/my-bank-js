@@ -8,14 +8,22 @@ class Conta {
         return this._saldo;
     }
     // Aula presencial do dia 22/12/2021, implemtar a conta parte de obterSaldo
-    obterSaldo(){
+    obterSaldo() {
 
 
     }
 
     sacar(valor) {
         if (this._saldo >= valor) {
-            this._saldo = this._saldo - valor;
+            if (valor > 0) {
+
+                this._saldo = this._saldo - valor;
+                return 0;
+            } else {
+                return 1;
+            }
+        } else {
+            return 2;
         }
     }
 
@@ -27,7 +35,7 @@ class Conta {
     }
 
     transferir(valor, contaDestino) {
-        // Implementar o código do método transferir
+        // Implementação do método transferir
         if (this._saldo <= valor || valor < 0) {
             return;
         }

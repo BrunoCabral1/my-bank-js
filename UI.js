@@ -20,6 +20,7 @@ function exibeMenu() {
     console.log("3 - Depositar");
     console.log("4 - Cadastrar Conta");
     console.log("5 - Listar Contas");
+    console.log("6 - Trasferencia de valores");
     console.log("9 - Sair");
 }
 
@@ -34,13 +35,31 @@ function escolheOpcao(opcao) {
             conta = bd.lerConta(numero);
             console.log('numero da conta ' + numero + '. saldo: ' + conta._saldo);
             break;
-            
-        case 2:
-            console.log('Implementar saque.');
+
+        case 2: //Realizado durante aula do dia 6
+            console.log('Realizar saque.');
+            conta = bd.lerConta(Number(prompt('informe o numero da conta: ')));
+            valor = Number(prompt('Informe o valor para saque: '));
+            resposta = conta.sacar(valor);
+            if (resposta == 0) {
+                console.log('\nSaque realizado com sucesso.  ')
+            } else if (resposta == 1) {
+                console.log('\nSaque não realizado. Valor invalido. ')
+            } else if (resposta == 2) {
+                console.log('\nSaque não realizado. Valor maior que o saldo atual. ')
+
+            }
+            console.log('\n **Seu saldo atual é: ' + conta._saldo + '**');
             break;
 
-        case 3:
-            console.log('Implementar deposito.');
+        case 3: //Realizado na aula do dia 6
+            console.log('Realizar deposito.');
+
+            conta = bd.lerConta(Number(prompt('informe o numero da conta: ')));
+            valor = Number(prompt('Informe o valor para deposito: '));
+            conta.depositar(valor);
+            console.log('\nDeposito realizado com sucesso. ')
+            console.log('\n **Seu saldo atual é: ' + conta._saldo + '**');
             break;
 
         case 4:
@@ -66,6 +85,15 @@ function escolheOpcao(opcao) {
         case 5:
             console.log('Listando contas: ');
             bd.listarContas();
+            break;
+        case 6:
+            //Continuar implementação do metodo transferencia
+            console.log('Realizar transferencia.');
+
+            conta = bd.lerConta(Number(prompt('informe o numero da conta: ')));
+            valor = Number(prompt('Informe o valor para deposito: '));
+            conta.transferir(valor, contaDestino);
+           
             break;
         case 9:
             console.log('Saindo da aplicação.');
