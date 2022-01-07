@@ -91,7 +91,7 @@ function escolheOpcao(opcao) {
             console.log('Realizar transferencia.');
 
             conta = bd.lerConta(Number(prompt('informe o numero da conta: ')));
-            valor = Number(prompt('Informe o valor para deposito: '));
+            valor = Number(prompt('Informe o valor que deseja transferir: '));
             conta.transferir(valor, contaDestino);
            
             break;
