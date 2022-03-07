@@ -97,6 +97,22 @@ function escolheOpcao(opcao) {
             conta.transferir(valor, contaDestino);
            
             break;
+            
+       case 7:
+            console.log('\nInformações do Cliente\n\n')
+            cpf = Number(prompt("Informe o CPF: "))
+            break;
+        case 8:
+            console.log('\nApagar Conta\n\n')
+            numConta = Number(prompt('Informe o número da conta: '))
+            conta = bd.lerConta(numConta);
+            if (conta == undefined) {
+                console.log(`\nEssa conta não existe!\nPor favor, informe uma conta válida.`)
+                return
+            }
+            bd.apagarConta(conta)
+            console.log(`\nConta ${numConta} deletada!`)
+            break;
         case 9:
             console.log('Saindo da aplicação.');
             break;
