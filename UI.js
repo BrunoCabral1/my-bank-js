@@ -21,6 +21,8 @@ function exibeMenu() {
     console.log("4 - Cadastrar Conta");
     console.log("5 - Listar Contas");
     console.log("6 - Trasferencia de valores");
+    console.log("7 - Informações do Cliente");
+    console.log("8 - Apagar Conta");
     console.log("9 - Sair");
 }
 
